@@ -1,0 +1,16 @@
+venv/
+.venv/
+__pycache__/
+*.pyc
+.env
+uploads/
+exports/
+uploads/
+outputs/
+transcripts/
+
+*.mp4
+*.mov
+*.avi
+*.wav
+*.mp3
