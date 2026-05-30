@@ -32,7 +32,7 @@ function App() {
       <>
         <section className="page-header">
           <div>
-            <p className="eyebrow">ClipForge Dashboard</p>
+            <p className="eyebrow">ShortLabs Dashboard</p>
             <h1>Transform long footage into ready-to-share shorts.</h1>
             <p className="page-description">
               Upload a long video, then follow the progress tracker while ClipForge

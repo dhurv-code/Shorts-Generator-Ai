@@ -113,7 +113,7 @@ def generate_shorts(video_id: str):
 
     generated_files = create_shorts(
         video["filepath"],
-        highlight_doc["highlights"]["highlights"]
+        highlight_doc["highlights"]
     )
 
     save_generated_shorts(
