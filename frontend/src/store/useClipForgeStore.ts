@@ -88,8 +88,25 @@ const useClipForgeStore = create<ClipForgeState>((set, get) => ({
             : item,
         ),
       })
-    } catch (error) {
-      const message = error instanceof Error ? error.message : 'Processing failed'
+    } catch (error: any) {
+      // Better error extraction for network / axios errors
+      let message = 'Processing failed'
+      try {
+        if (error?.response) {
+          // Server responded with a status code
+          message = `Server ${error.response.status}: ${JSON.stringify(error.response.data)}`
+        } else if (error?.request) {
+          // Request was made but no response
+          message = `No response from server: ${error.message}`
+        } else if (error?.message) {
+          message = error.message
+        }
+      } catch (e) {
+        message = String(error)
+      }
+
+      console.error('Processing error:', error)
+
       set({ processingState: { step: get().processingState.step, status: 'error', message } })
       set({
         history: get().history.map((item) =>

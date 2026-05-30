@@ -105,6 +105,8 @@ def generate_shorts(video_id: str):
         return {"error": "Video not found"}
 
     highlight_doc = get_highlights(video_id)
+    print("HIGHLIGHT DOC:")
+    print(highlight_doc)
 
     if not highlight_doc:
         return {"error": "Highlights not found"}

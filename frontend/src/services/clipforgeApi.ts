@@ -25,7 +25,8 @@ function makeFileUrl(path: string) {
 
 export async function uploadVideo(file: File) {
   const formData = new FormData()
-  formData.append('video', file)
+  // Backend expects the form field name to be 'file'
+  formData.append('file', file)
   const response = await api.post<UploadResponse>('/video/upload', formData)
   return response.data.video_id
 }
