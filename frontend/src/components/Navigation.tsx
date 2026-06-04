@@ -10,7 +10,7 @@ export default function Navigation({ tabs, activeTab, onChange }: NavigationProp
       <div className="brand-panel">
         <div className="brand-mark" />
         <div>
-          <p className="brand-label">ClipForge</p>
+          <p className="brand-label">ShortLabs</p>
           <p className="brand-subtitle">AI Shorts Manager</p>
         </div>
       </div>

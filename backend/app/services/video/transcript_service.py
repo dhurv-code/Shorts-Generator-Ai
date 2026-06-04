@@ -1,9 +1,6 @@
 from app.database.mongodb import transcripts_collection
 
-def save_transcript(
-    video_id,
-    transcript
-):
+def save_transcript(video_id,transcript):
 
     transcripts_collection.insert_one(
         {

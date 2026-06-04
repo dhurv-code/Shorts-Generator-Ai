@@ -1,11 +1,6 @@
 from app.database.mongodb import videos_collection
 
-def create_video_record(
-        video_id,
-        filename,
-        filepath
-):
-
+def create_video_record(video_id,filename,filepath):
     video = {
         "video_id": video_id,
         "filename": filename,

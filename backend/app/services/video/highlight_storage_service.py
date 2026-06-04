@@ -7,12 +7,8 @@ def save_highlights(video_id, highlights):
         "highlights": highlights
     }
 
-    highlights_collection.insert_one(
-        highlight_doc
-    )
-
+    highlights_collection.insert_one(highlight_doc)
     return highlight_doc
-
 
 def get_highlights(video_id):
 

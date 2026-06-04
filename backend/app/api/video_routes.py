@@ -58,9 +58,7 @@ def transcribe(video_id: str):
         audio_path
     )
 
-    transcript = transcribe_audio(
-        audio_path
-    )
+    transcript = transcribe_audio(audio_path)
 
     save_transcript(
         video_id,
@@ -73,21 +71,13 @@ def transcribe(video_id: str):
     }
 
 @router.post("/highlights/{video_id}")
-def generate_highlights(
-        video_id: str
-):
+def generate_highlights(video_id: str):
 
-    transcript_doc = get_transcript(
-        video_id
-    )
+    transcript_doc = get_transcript(video_id)
 
-    transcript = transcript_doc[
-        "transcript"
-    ]
+    transcript = transcript_doc["transcript"]
 
-    highlights = find_highlights(
-        transcript
-    )
+    highlights = find_highlights(transcript)
 
     save_highlights(
         video_id,

@@ -35,7 +35,7 @@ function App() {
             <p className="eyebrow">ShortLabs Dashboard</p>
             <h1>Transform long footage into ready-to-share shorts.</h1>
             <p className="page-description">
-              Upload a long video, then follow the progress tracker while ClipForge
+              Upload a long video, then follow the progress tracker while ShortLabs
               transcribes, highlights, and generates polished short clips.
             </p>
           </div>

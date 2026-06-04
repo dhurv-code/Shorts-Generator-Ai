@@ -1,9 +1,6 @@
 from app.services.video.cutter_service import generate_short
 
-def create_shorts(
-        video_path,
-        highlights
-):
+def create_shorts(video_path,highlights):
     print("TYPE:", type(highlights))
     print("DATA:", highlights)
 
@@ -26,14 +23,3 @@ def create_shorts(
         generated_files.append(path)
 
     return generated_files
-# from app.services.video.cutter_service import generate_short
-
-# def create_shorts(video_path, highlights):
-
-#     print("="*50)
-#     print("HIGHLIGHTS RECEIVED:")
-#     print(highlights)
-#     print("TYPE:", type(highlights))
-#     print("="*50)
-
-#     return []
