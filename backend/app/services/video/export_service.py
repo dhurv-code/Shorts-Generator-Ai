@@ -8,9 +8,6 @@ def create_shorts(video_path,highlights):
 
     for index, highlight in enumerate(highlights):
 
-        print("CURRENT:", highlight)
-        print("TYPE:", type(highlight))
-
         output_file = f"short_{index + 1}.mp4"
 
         path = generate_short(
@@ -21,5 +18,7 @@ def create_shorts(video_path,highlights):
         )
 
         generated_files.append(path)
+        print("HIGHLIGHT OBJECT:")
+        print(highlight)
 
     return generated_files
