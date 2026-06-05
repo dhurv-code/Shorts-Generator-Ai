@@ -17,25 +17,62 @@ def find_highlights(transcript):
     )
 
     response = model.generate_content(
-        f"""
+    f"""
 Analyze this transcript.
+
 Find the best 2 highlights.
+
 Rules:
 - 10-30 seconds
 - Interesting
 - Educational
 - Surprising
 - Emotional
-Return ONLY JSON.
+
+Return ONLY valid JSON.
+
+Use EXACTLY this schema:
+
+[
+  {{
+    "start": 0,
+    "end": 15,
+    "reason": "Interesting insight"
+  }}
+]
+
+Do not use:
+- start_time
+- end_time
+- start_seconds
+- end_seconds
+
+Use ONLY:
+- start
+- end
+- reason
+
 Transcript:
 
-{transcript_text}"""
-    )
+{transcript_text}
+"""
+)
 
     cleaned = re.sub(
-        r"```json|```",
-        "",
-        response.text
-    ).strip()
+    r"```json|```",
+    "",
+    response.text
+).strip()
+
     highlights = json.loads(cleaned)
-    return highlights
+
+    normalized = []
+
+    for h in highlights:
+        normalized.append({
+            "start": float(h["start"]),
+            "end": float(h["end"]),
+            "reason": h.get("reason", "")
+        })
+
+    return normalized
