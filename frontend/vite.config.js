@@ -8,18 +8,18 @@ export default defineConfig({
     proxy: {
       // Forward API calls to the backend FastAPI server
       '/video': {
-        target: 'http://127.0.0.1:8000',
+        target: 'https://shorts-generator-ai.onrender.com',
         changeOrigin: true,
         secure: false,
       },
       // Serve uploaded and generated files from backend
       '/uploads': {
-        target: 'http://127.0.0.1:8000',
+        target: 'https://shorts-generator-ai.onrender.com',
         changeOrigin: true,
         secure: false,
       },
       '/outputs': {
-        target: 'http://127.0.0.1:8000',
+        target: 'https://shorts-generator-ai.onrender.com',
         changeOrigin: true,
         secure: false,
       },
