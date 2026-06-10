@@ -5,7 +5,9 @@ import os
 from app.api.video_routes import router
 
 
+os.makedirs("uploads", exist_ok=True)
 os.makedirs("outputs", exist_ok=True)
+os.makedirs("transcripts", exist_ok=True)
 
 
 app = FastAPI(
