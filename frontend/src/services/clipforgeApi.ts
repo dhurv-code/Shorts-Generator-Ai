@@ -1,9 +1,9 @@
 import axios, { AxiosInstance } from 'axios'
 
-const API_BASE = (import.meta.env.VITE_API_BASE as string) ?? ''
+const API_BASE = (import.meta.env.VITE_API_BASE as string) ?? 'https://shorts-generator-ai.onrender.com'
 
 const api: AxiosInstance = axios.create({
-  baseURL: '',
+  baseURL: API_BASE,
   headers: {
     Accept: 'application/json',
   },
