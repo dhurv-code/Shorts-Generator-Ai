@@ -17,7 +17,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173",
-        "https://shorts-generator-ai.vercel.app/"
+        "https://shorts-generator-ai.vercel.app"
     ],
     allow_credentials=True,
     allow_methods=["*"],
