@@ -1,7 +1,7 @@
 from faster_whisper import WhisperModel
 from app.database.mongodb import transcripts_collection
 
-model = WhisperModel("tiny",device="cpu")
+model = WhisperModel("tiny",device="cpu", compute_type="int8")
 def transcribe_audio(audio_path):
     segments, _ = model.transcribe(audio_path)
 
